@@ -889,22 +889,120 @@ a { color: inherit; text-decoration: none; }
 /* ── Mobile ── */
 
 @media (max-width: 968px) {
+  .hero {
+    padding: 0;
+    background: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 0;
+    position: relative;
+    z-index: 2;
+    padding: 100px 0 60px;
   }
 
-  .hero-image { order: -1; }
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
 
   .hero-photo {
-    max-width: 400px;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
   }
 
-  .hero-content { text-align: center; }
-  .hero-desc { margin: 0 auto 32px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-photo {
+      animation: hero-zoom-out 8s ease-out forwards;
+    }
+  }
+
+  @keyframes hero-zoom-out {
+    0% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.7) 0%,
+      rgba(15, 23, 42, 0.55) 50%,
+      rgba(15, 23, 42, 0.75) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero h1 .text-accent {
+    color: var(--accent);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-tag {
+    background: rgba(212, 115, 26, 0.2);
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-desc {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 auto 32px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  }
+
   .hero-actions { justify-content: center; }
-  .hero-trust { justify-content: center; }
+
+  .hero-actions .btn-outline {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .hero-actions .btn-outline:hover {
+    background: #fff;
+    color: var(--primary);
+    border-color: #fff;
+  }
+
+  .hero-trust {
+    justify-content: center;
+  }
+
+  .trust-item {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .trust-item svg { color: var(--accent); }
 
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
