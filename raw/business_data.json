@@ -1,0 +1,22 @@
+{
+  "scraped_at": "2026-03-19T00:00:37.047201",
+  "source_url": "https://www.facebook.com/profile.php?id=100094585363889",
+  "business": {
+    "name": null,
+    "category": "Category",
+    "address": null,
+    "phone": "(902) 943-3003",
+    "email": null,
+    "website": null,
+    "hours": null,
+    "description": null
+  },
+  "reviews": [],
+  "photos": [
+    "photos/photo_001.jpg",
+    "photos/photo_002.jpg",
+    "photos/photo_003.jpg",
+    "photos/photo_004.jpg",
+    "photos/photo_005.jpg"
+  ]
+}
