@@ -112,7 +112,7 @@
     form.innerHTML = `
       <div class="form-success">
         <h3>Thank You!</h3>
-        <p>We've received your request and will get back to you shortly with your free quote. You can also call or text us at <strong>(902) 440-1378</strong>.</p>
+        <p>We've received your request and will get back to you shortly with your free quote. You can also call or text us at <strong>(902) 943-3003</strong>.</p>
       </div>
     `;
   });
